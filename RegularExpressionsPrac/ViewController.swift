@@ -18,18 +18,12 @@ extension String {
 }
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var targetStringTextField: UITextField!
+    @IBOutlet weak var targetStringTextView: UITextView!
     @IBOutlet weak var regularExpressionsTextFiled: UITextField!
     @IBOutlet weak var answerLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
     @IBAction func TapCheckButton(_ sender: UIButton) {
-        let matchCounts = targetStringTextField.text!.regexMatch(pattern: regularExpressionsTextFiled.text!)
+        let matchCounts = targetStringTextView.text!.regexMatch(pattern: regularExpressionsTextFiled.text!)
         let answerLabelText: String
         if matchCounts <= 0 {
             answerLabelText = "対象なし"
